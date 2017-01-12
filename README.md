@@ -9,6 +9,7 @@ Basic game is handle with ncurse lib wich 70 % of tests passed.
 
 # Bonus
 
+Full game handled in CSFML lib, with fully working multiplayer ( only 2 players ), menus not finished.
 
 Launch the server with :
 
