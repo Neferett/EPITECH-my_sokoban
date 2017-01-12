@@ -1,0 +1,138 @@
+graphics/handler/game_launcher.c:17:  while (sfRenderWindow_pollEvent(fb->wd, &event))
+graphics/handler/game_launcher.c:19:      get_pos(fb->sok);
+graphics/handler/game_launcher.c:22:	sfRenderWindow_close(fb->wd);
+graphics/handler/game_launcher.c:25:	set_pos(fb, fb->sok->pos_p->y - 1, fb->sok->pos_p->x, 3);
+graphics/handler/game_launcher.c:28:	set_pos(fb, fb->sok->pos_p->y + 1, fb->sok->pos_p->x, 4);
+graphics/handler/game_launcher.c:31:	set_pos(fb, fb->sok->pos_p->y, fb->sok->pos_p->x - 1, 1);
+graphics/handler/game_launcher.c:34:	set_pos(fb, fb->sok->pos_p->y, fb->sok->pos_p->x + 1, 2);
+graphics/handler/game_launcher.c:36:	fb->sok = initialiser(fb->sok->file);
+graphics/handler/game_launcher.c:44:  fb->wl = false;
+graphics/handler/game_launcher.c:46:  drawer_str(fb, fb->sok->str, 0, false);
+graphics/handler/game_launcher.c:51:  sfText_setString(fb->t1, "You");
+graphics/handler/game_launcher.c:52:  sfText_setFont(fb->t1, fb->font);
+graphics/handler/game_launcher.c:53:  sfText_setCharacterSize(fb->t1, 150);
+graphics/handler/game_launcher.c:54:  sfText_setColor(fb->t1, sfBlue);
+graphics/handler/game_launcher.c:55:  sfText_setPosition(fb->t1, set_vectorf((W / 2) - 620, (H / 2) - 500));
+graphics/handler/game_launcher.c:56:  sfText_setString(fb->t2, "Opponent");
+graphics/handler/game_launcher.c:57:  sfText_setFont(fb->t2, fb->font);
+graphics/handler/game_launcher.c:58:  sfText_setCharacterSize(fb->t2, 150);
+graphics/handler/game_launcher.c:59:  sfText_setColor(fb->t2, sfRed);
+graphics/handler/game_launcher.c:60:  sfText_setPosition(fb->t2, set_vectorf((W / 2) + 270, (H / 2) - 500));
+graphics/handler/game_launcher.c:66:  fb->wl = false;
+graphics/handler/game_launcher.c:69:  drawer_str(fb, fb->sok->str, 0, true);
+graphics/handler/game_launcher.c:71:  fb->sok->str2 = message_handler(fb->cl, fb->sok->str);
+graphics/handler/game_launcher.c:72:  drawer_str(fb, fb->sok->str2, 1200, true);
+graphics/handler/state_handler.c:16:  fb->single = state1;
+graphics/handler/state_handler.c:17:  fb->multiplayer = state2;
+graphics/handler/state_handler.c:18:  fb->settings = state3;
+graphics/handler/window_handler.c:15:  if (fb->multiplayer && *fb->sok->str2 == '#')
+graphics/handler/window_handler.c:17:      if (o == entire_check(fb->sok->str2, fb->sok) && (fb->wl = true)
+graphics/handler/window_handler.c:18:	  && !(fb->win = false) && (fb->sel = 0))
+graphics/handler/window_handler.c:19:	fb->sok = initialiser(fb->sok->file);
+graphics/handler/window_handler.c:21:  if (o == fb->sok->in_box && !usleep(1000000) && (fb->wl = true)
+graphics/handler/window_handler.c:22:      && (fb->win = true) && (fb->sel = 1))
+graphics/handler/window_handler.c:23:    fb->sok = initialiser(fb->sok->file);
+graphics/handler/window_handler.c:24:  else if (!map_checker(fb->sok->str, fb->sok)
+graphics/handler/window_handler.c:25:	   && !usleep(1000000) && (fb->wl = true)
+graphics/handler/window_handler.c:26:	   && !(fb->win = false) && (fb->sel = 1))
+graphics/handler/window_handler.c:27:    fb->sok = initialiser(fb->sok->file);
+graphics/handler/window_handler.c:32:  checker(fb, nb_of(fb->sok->origin, 'O'));
+graphics/handler/window_handler.c:33:  if (fb->wl)
+graphics/handler/window_handler.c:35:  else if (!fb->single && !fb->multiplayer && !fb->settings)
+graphics/handler/window_handler.c:37:  else if (fb->single)
+graphics/handler/window_handler.c:39:  else if (fb->multiplayer)
+graphics/handler/window_handler.c:50:  fb->first_init = false;
+graphics/handler/window_handler.c:52:  while (sfRenderWindow_isOpen(fb->wd))
+graphics/handler/window_handler.c:54:  sfRenderWindow_destroy(fb->wd);
+graphics/menus/game_menu.c:15:  sfText_setString(fb->t1, fb->win ? "You won !" : "You lost !");
+graphics/menus/game_menu.c:16:  sfText_setFont(fb->t1, fb->font);
+graphics/menus/game_menu.c:17:  sfText_setCharacterSize(fb->t1, 150);
+graphics/menus/game_menu.c:18:  sfText_setColor(fb->t1, sfWhite);
+graphics/menus/game_menu.c:19:  sfText_setPosition(fb->t1, set_vectorf((W / 2) - (600 / 2), (H / 2) - 400));
+graphics/menus/game_menu.c:20:  sfText_setString(fb->t2, fb->win ? "Play again" : "Try again");
+graphics/menus/game_menu.c:21:  sfText_setFont(fb->t2, fb->font);
+graphics/menus/game_menu.c:22:  sfText_setCharacterSize(fb->t2, 150);
+graphics/menus/game_menu.c:23:  sfText_setColor(fb->t2, fb->sel == 1 ? sfRed : sfWhite);
+graphics/menus/game_menu.c:24:  sfText_setPosition(fb->t2, set_vectorf((W / 2) - (400 / 2), (H / 2) - 200));
+graphics/menus/game_menu.c:25:  sfText_setString(fb->t3, "Back to menu");
+graphics/menus/game_menu.c:26:  sfText_setFont(fb->t3, fb->font);
+graphics/menus/game_menu.c:27:  sfText_setCharacterSize(fb->t3, 150);
+graphics/menus/game_menu.c:28:  sfText_setColor(fb->t3, fb->sel == 2 ? sfRed : sfWhite);
+graphics/menus/game_menu.c:29:  sfText_setPosition(fb->t3, set_vectorf((W / 2) - (550 / 2), (H / 2)));
+graphics/menus/game_menu.c:30:  sfText_setString(fb->t4, "Quit");
+graphics/menus/game_menu.c:31:  sfText_setFont(fb->t4, fb->font);
+graphics/menus/game_menu.c:32:  sfText_setCharacterSize(fb->t4, 150);
+graphics/menus/game_menu.c:33:  sfText_setColor(fb->t4, fb->sel == 3 ? sfRed : sfWhite);
+graphics/menus/game_menu.c:34:  sfText_setPosition(fb->t4, set_vectorf((W / 2) - (200 / 2), (H / 2) + 200));
+graphics/menus/game_menu.c:44:  while (sfRenderWindow_pollEvent(fb->wd, &event))
+graphics/menus/game_menu.c:49:	    (event.key.code == sfKeyReturn && fb->sel == 3))))
+graphics/menus/game_menu.c:50:	sfRenderWindow_close(fb->wd);
+graphics/menus/game_menu.c:52:	fb->sel == 1 ? 1 : fb->sel--;
+graphics/menus/game_menu.c:54:	fb->sel == 3 ? 1 : fb->sel++;
+graphics/menus/game_menu.c:57:	  if (fb->sel == 1)
+graphics/menus/game_menu.c:59:	  else if (fb->sel == 2 && !(fb->wl = false) && !(fb->sel = 0))
+graphics/menus/start_menu.c:15:  sfText_setString(fb->t1, "Single");
+graphics/menus/start_menu.c:16:  sfText_setFont(fb->t1, fb->font);
+graphics/menus/start_menu.c:17:  sfText_setCharacterSize(fb->t1, 150);
+graphics/menus/start_menu.c:18:  sfText_setColor(fb->t1, !fb->sel ? sfRed : sfWhite);
+graphics/menus/start_menu.c:19:  sfText_setPosition(fb->t1, set_vectorf((W / 2) - (300 / 2), (H / 2) - 400));
+graphics/menus/start_menu.c:20:  sfText_setString(fb->t2, "MultiPlayer");
+graphics/menus/start_menu.c:21:  sfText_setFont(fb->t2, fb->font);
+graphics/menus/start_menu.c:22:  sfText_setCharacterSize(fb->t2, 150);
+graphics/menus/start_menu.c:23:  sfText_setColor(fb->t2, fb->sel == 1 ? sfRed : sfWhite);
+graphics/menus/start_menu.c:24:  sfText_setPosition(fb->t2, set_vectorf((W / 2) - (650 / 2), (H / 2) - 200));
+graphics/menus/start_menu.c:25:  sfText_setString(fb->t3, "Settings");
+graphics/menus/start_menu.c:26:  sfText_setFont(fb->t3, fb->font);
+graphics/menus/start_menu.c:27:  sfText_setCharacterSize(fb->t3, 150);
+graphics/menus/start_menu.c:28:  sfText_setColor(fb->t3, fb->sel == 2 ? sfRed : sfWhite);
+graphics/menus/start_menu.c:29:  sfText_setPosition(fb->t3, set_vectorf((W / 2) - (350 / 2), (H / 2)));
+graphics/menus/start_menu.c:30:  sfText_setString(fb->t4, "Quit");
+graphics/menus/start_menu.c:31:  sfText_setFont(fb->t4, fb->font);
+graphics/menus/start_menu.c:32:  sfText_setCharacterSize(fb->t4, 150);
+graphics/menus/start_menu.c:33:  sfText_setColor(fb->t4, fb->sel == 3 ? sfRed : sfWhite);
+graphics/menus/start_menu.c:34:  sfText_setPosition(fb->t4, set_vectorf((W / 2) - (250 / 2), (H / 2) + 200));
+graphics/menus/start_menu.c:42:  while (sfRenderWindow_pollEvent(fb->wd, &event))
+graphics/menus/start_menu.c:47:	    (event.key.code == sfKeyReturn && fb->sel == 3))))
+graphics/menus/start_menu.c:48:	sfRenderWindow_close(fb->wd);
+graphics/menus/start_menu.c:50:	!fb->sel ? 1 : fb->sel--;
+graphics/menus/start_menu.c:52:	fb->sel == 3 ? 1 : fb->sel++;
+graphics/menus/start_menu.c:55:	  if (!fb->sel)
+graphics/menus/start_menu.c:57:	  else if (fb->sel == 1)
+graphics/menus/start_menu.c:59:	      fb->cl = init(12000);
+graphics/methods/drawer.c:68:  if ((i = -1) && (y = (1080 / 2) - fb->sok->l_y * 10)) {}
+graphics/methods/drawer.c:71:      x = (((1920 / 2) - fb->sok->l_x * 20) / (multi ? 2 : 1)) -
+graphics/methods/my_put_pixel.c:15:  fb->pixels[((fb->width * y) + x) * 4] = color.r;
+graphics/methods/my_put_pixel.c:16:  fb->pixels[((fb->width * y) + x) * 4 + 1] = color.g;
+graphics/methods/my_put_pixel.c:17:  fb->pixels[((fb->width * y) + x) * 4 + 2] = color.b;
+graphics/methods/my_put_pixel.c:18:  fb->pixels[((fb->width * y) + x) * 4 + 3] = color.a;
+graphics/utils/utils.c:20:  if (!(fb->sprite = sfSprite_create()) ||
+graphics/utils/utils.c:21:      !(fb->texture = sfTexture_create(W, H)) ||
+graphics/utils/utils.c:22:      !(fb->t1 = sfText_create()) || !(fb->t2 = sfText_create()) ||
+graphics/utils/utils.c:23:      !(fb->t3 = sfText_create()) || !(fb->t4 = sfText_create()) ||
+graphics/utils/utils.c:24:      !(fb->font = sfFont_createFromFile("Sweet.ttf")))
+graphics/utils/utils.c:26:  sfSprite_setTexture(fb->sprite, fb->texture, sfTrue);
+graphics/utils/utils.c:27:  fb->mode = set_mode(W, H, 32);
+graphics/utils/utils.c:28:  if (!(fb->wd = sfRenderWindow_create(fb->mode, "Sokoban",
+graphics/utils/utils.c:31:  fb->sok = sok;
+graphics/utils/utils.c:32:  if ((fb->height = H) && (fb->width = W) && !(fb->sel = 0)) {}
+graphics/utils/utils.c:33:  if (!(fb->pixels = malloc(W * H * 4 * sizeof(*fb))))
+graphics/utils/utils.c:37:    fb->pixels[i] = 0;
+graphics/utils/utils.c:71:  sfTexture_updateFromPixels(fb->texture, fb->pixels, W, H, 0, 0);
+graphics/utils/utils.c:72:  sfRenderWindow_clear(fb->wd, sfBlack);
+graphics/utils/utils.c:73:  sfRenderWindow_drawSprite(fb->wd, fb->sprite, NULL);
+graphics/utils/utils.c:74:  if (fb->multiplayer)
+graphics/utils/utils.c:76:      sfRenderWindow_drawText(fb->wd, fb->t1, NULL);
+graphics/utils/utils.c:77:      sfRenderWindow_drawText(fb->wd, fb->t2, NULL);
+graphics/utils/utils.c:79:  if (fb->wl || (!fb->single && !fb->multiplayer))
+graphics/utils/utils.c:81:      sfRenderWindow_drawText(fb->wd, fb->t1, NULL);
+graphics/utils/utils.c:82:      sfRenderWindow_drawText(fb->wd, fb->t2, NULL);
+graphics/utils/utils.c:83:      sfRenderWindow_drawText(fb->wd, fb->t3, NULL);
+graphics/utils/utils.c:84:      sfRenderWindow_drawText(fb->wd, fb->t4, NULL);
+graphics/utils/utils.c:86:  sfRenderWindow_display(fb->wd);
+handler/pos_handler.c:77:  player = converter(fb->sok, fb->sok->pos_p->y, fb->sok->pos_p->x);
+handler/pos_handler.c:78:  new_player = converter(fb->sok, y, x);
+handler/pos_handler.c:79:  if (get_char_pos(fb->sok, y, x) == '#')
+handler/pos_handler.c:81:  if (get_char_pos(fb->sok, y, x) == 'X')
+handler/pos_handler.c:82:    pos_X(fb->sok, new_player, player, direction);
+handler/pos_handler.c:83:  else if (!pos_O(fb->sok, new_player, player))
+handler/pos_handler.c:84:    my_swap(&fb->sok->str[player], &fb->sok->str[new_player]);
