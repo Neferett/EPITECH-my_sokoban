@@ -1,4 +1,4 @@
-# EPITECH-my_sokoban
+# Sokoban MiniGame
 Create sokoban minigame in c
 
 # Basic game
